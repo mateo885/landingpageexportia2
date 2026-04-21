@@ -977,11 +977,34 @@
         <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-dark); margin-bottom: 14px;">Pourquoi il recommande</div>
         <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px;">Avant le programme, la prospection de Korfit n'incorporait pas d'outils pour contacter un grand volume de prospects de manière <strong style="color: var(--text);">ciblée et personnalisée</strong>.</p>
         <p style="font-size: 14px; color: var(--text-muted); line-height: 1.65;">Le programme Export IA a permis à Korfit de <strong style="color: var(--text);">tirer parti de l'IA</strong> pour gagner en temps, en précision, et de structurer ses efforts de prospection.</p>
+        <button onclick="document.getElementById('modal-korfit').style.display='flex'" style="margin-top: 20px; background: transparent; border: 1.5px solid var(--teal); color: var(--teal); font-family: 'Lato', Arial, sans-serif; font-size: 13px; font-weight: 500; padding: 9px 18px; border-radius: 6px; cursor: pointer; transition: background 0.2s, color 0.2s;" onmouseover="this.style.background='var(--teal-light)'" onmouseout="this.style.background='transparent'">Lire le témoignage complet</button>
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- MODALE TÉMOIGNAGE KORFIT -->
+<div id="modal-korfit" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1000; align-items:center; justify-content:center; padding:24px;">
+  <div style="background:#FFFFFF; border-radius:12px; max-width:680px; width:100%; max-height:88vh; overflow-y:auto; padding:48px 52px; position:relative; box-shadow:0 24px 64px rgba(0,0,0,0.2);">
+    <button onclick="document.getElementById('modal-korfit').style.display='none'" style="position:absolute; top:20px; right:20px; background:transparent; border:none; cursor:pointer; color:#888; font-size:22px; line-height:1;" aria-label="Fermer">&times;</button>
+    <p style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--green-dark); margin-bottom:16px;">Témoignage</p>
+    <div style="font-size:15px; color:#333; line-height:1.8;">
+      <p style="margin-bottom:16px;">Ce qui m'a motivé à embarquer dans ce programme, c'était principalement le désir d'accélérer mon développement à l'international. Je commercialise un gel de cicatrisation et, jusqu'à présent, mes ventes étaient concentrées au Canada. Mon objectif était clair : entrer en contact avec des distributeurs, autant au Canada qu'à l'international, mais surtout le faire de manière plus rapide, structurée et efficace.</p>
+      <p style="margin-bottom:16px;">Avant de rejoindre le programme, ma prospection était limitée et très manuelle. Je savais qu'il y avait un fort potentiel à l'international, mais je manquais d'outils et de méthodes pour contacter un grand volume de prospects tout en assurant un suivi rigoureux. C'est ce qui m'a amené à m'intéresser à l'intelligence artificielle comme levier pour automatiser et optimiser ce processus.</p>
+      <p style="margin-bottom:16px;">Mes attentes étaient d'obtenir un accompagnement concret pour bâtir des outils de prospection performants avec l'IA, ainsi que des méthodes de travail applicables rapidement dans mon entreprise.</p>
+      <p style="margin-bottom:16px;">L'expérience avec l'équipe a été très positive du début à la fin. Nous avions des rencontres aux deux semaines, ce qui permettait un suivi constant et structuré. À chaque rencontre, l'équipe présentait le travail accompli, les outils développés, ainsi que les actions mises en place, notamment au niveau des appels et de la prospection. J'ai particulièrement apprécié la transparence et la clarté dans les explications, surtout en ce qui concerne l'utilisation de l'intelligence artificielle pour construire les outils.</p>
+      <p style="margin-bottom:16px;">La synergie avec l'équipe s'est installée naturellement. J'avais un représentant dédié qui effectuait des appels pour générer des opportunités, ainsi qu'une ressource spécialisée qui m'accompagnait dans la création d'un outil de prospection basé sur l'IA. Cette combinaison entre exécution concrète et structuration stratégique a fait toute la différence.</p>
+      <p style="margin-bottom:16px;">En termes de résultats, nous avons rapidement obtenu des avancées concrètes. Plusieurs rencontres ont été organisées avec des distributeurs à l'international, notamment dans les pays du Golfe, un marché stratégique pour mon produit. Nous avons ainsi pu entrer en contact avec des distributeurs aux Émirats arabes unis et au Qatar, puis amorcer des discussions et des négociations en vue de collaborations.</p>
+      <p style="margin-bottom:16px;">Au-delà des résultats immédiats, ce programme m'a surtout permis de structurer ma prospection et de mettre en place des systèmes qui vont continuer à générer des opportunités dans le temps.</p>
+      <p style="margin-bottom:28px;">J'ai beaucoup apprécié travailler avec les équipes de CIQMO et d'Injini, et je recommande ce service sans hésiter à toute entreprise qui souhaite gagner du temps, structurer sa prospection et tirer parti de l'intelligence artificielle pour passer au prochain niveau.</p>
+    </div>
+    <div style="border-top:1px solid var(--border); padding-top:20px;">
+      <div style="font-size:14px; font-weight:500; color:var(--teal);">Jeremy Catudal</div>
+      <div style="font-size:12px; color:#888; margin-top:2px;">Président, Korfit Médical</div>
+    </div>
+  </div>
+</div>
 
 <!-- MODALITÉS & INVESTISSEMENT -->
 <div>
@@ -1237,6 +1260,15 @@ function toggleOrpexMenu(e) {
 document.addEventListener('click', function() {
   var menu = document.getElementById('orpex-menu');
   if (menu) menu.style.display = 'none';
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var modal = document.getElementById('modal-korfit');
+    if (modal) modal.style.display = 'none';
+  }
+});
+document.getElementById('modal-korfit').addEventListener('click', function(e) {
+  if (e.target === this) this.style.display = 'none';
 });
 </script>
 </body>
